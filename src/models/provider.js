@@ -1,18 +1,20 @@
 const mongoose = require('mongoose')
+const passportLocalMongoose = require("passport-local-mongoose");
+//const findOrCreate = require('mongoose-findorcreate')
 
 const providerSchema = new mongoose.Schema({
     name : {
         type : String,
         required : true,
     },
-    email : {
+    username : {
         type : String,
         required : true,
         unique : true
     },
-    password : {
+    role : {
         type : String,
-        required : true
+        default: 'provider'
     },
     phoneNumber : {
         type : Number,
@@ -20,6 +22,9 @@ const providerSchema = new mongoose.Schema({
     }
 
 })
+
+providerSchema.plugin(passportLocalMongoose);  
+//providerSchema.plugin(findOrCreate);
 
 const Provider = mongoose.model('provider',providerSchema)
 

@@ -17,6 +17,6 @@ const slotsSchema = new mongoose.Schema({
     }
 })
 
-const Slots = mongoose.model('parking',slotsSchema)
+const Slots = mongoose.model('slots',slotsSchema)
 
 module.exports = Slots
