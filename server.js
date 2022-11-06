@@ -12,7 +12,6 @@ const providerRoute = require('./src/routers/provider');
 const app = express()
 const port = 3001
 
-const router = express.Router();
 
 app.use(express.static("public"));
 // app.use(bodyParser.urlencoded({ extended: false }))
